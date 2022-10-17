@@ -1,4 +1,4 @@
-// Uncomment code below to test setting up a React application
+// Uncomment code below to test bundling the js for a React application
 
 // import React from "react"
 // import ReactDOM from "react-dom"
