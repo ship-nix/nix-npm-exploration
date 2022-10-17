@@ -4,8 +4,6 @@ Exploration in figuring how to build a node/npm flake for both dev environment a
 
 **WORK IN PROGRESS**
 
-The goal is to create a dev environment that basically gives you
-
 # direnv
 
 For the best experience, have direnv installed and hooked to your shell
