@@ -2,12 +2,13 @@
 
 **This is a work in progress, but already a great display for the power of a Node/Nix dev environment**
 
-Exploration in combined development environment and deployment environment with node/npm with Nix flakes.
+Exploration in combined deployment environment and live-reloaded development environment with node/npm with Nix flakes.
 
 ## What I have achieved in building so far
 
 - [x] Super fast incrementally updating shell with a [Nix flake](https://nixos.wiki/wiki/Flakes) and efficient nix caching
 - [x] Auto-reloading nix dev shell with direnv
+- [x] Simple live-reloading with esbuild
 - [x] Read package-lock.json, and build with nix, with no extra Nix code generation
 - [x] Manage dependencies with npm's native CLI `npm install [package]`, but actually fetch and build packages via Nix, both in development shell and production build
 
