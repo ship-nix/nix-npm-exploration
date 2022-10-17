@@ -9,7 +9,7 @@ Exploration in combined deployment environment and live-reloaded development env
 - [x] Super fast incrementally updating shell with a [Nix flake](https://nixos.wiki/wiki/Flakes) and efficient nix caching
 - [x] Auto-reloading nix dev shell with direnv
 - [x] Simple live-reloading with esbuild
-- [x] Read package-lock.json, and build with nix, with no extra Nix code generation
+- [x] Read package-lock.json, and build with nix, with no extra Nix code generation saved to source code
 - [x] Manage dependencies with npm's native CLI `npm install [package]`, but actually fetch and build packages via Nix, both in development shell and production build
 
 ## TODO
