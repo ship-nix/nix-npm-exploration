@@ -3,7 +3,7 @@ const esbuild = require('esbuild');
 const isProd = process.env.NODE_ENV === 'production'
 
 esbuild.build({
-    entryPoints: ['index.js'],
+    entryPoints: ['src/index.js'],
     nodePaths: [process.env.NODE_PATH],
     bundle: true,
     outdir: "dist",
