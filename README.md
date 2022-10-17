@@ -1,10 +1,18 @@
-# nix-npm-exploration
+# A nix/npm exploration of node.js in production and development
 
-Exploration in combined development environment and deployment with node/npm with Nix flakes.
+Exploration in combined development environment and deployment environment with node/npm with Nix flakes.
 
-- Super fast auto-reloading development shell with a [Nix flake](https://nixos.wiki/wiki/Flakes)
-- Manage dependencies with npm itself
-- Simple to hook up to a NixOs server provisioned with [ship-nix.com](https://ship-nix/com)
+## What I have achieved in building so far
+
+- [x] Super fast auto-reloading development shell with a [Nix flake](https://nixos.wiki/wiki/Flakes)
+- [x] Automatically load auto-reloading nix development shell with direnv
+- [x] Manage dependencies with npm's CLI, but in reality actually fetch and build packages via Nix, both in development and production
+
+## TODO
+
+- [ ] Make a NixOs configuration that works with [ship-nix.com](https://ship-nix/com) for easy deployment to DigitalOcean
+- [ ] Use a bundler like Parcel or Vite to make HMR (Hot Module Reloading)
+- [ ] Test use on Mac, non-NixOs and Windows
 
 **WORK IN PROGRESS**
 
