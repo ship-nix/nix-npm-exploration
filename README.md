@@ -14,7 +14,7 @@ Exploration in combined deployment environment and live-reloaded development env
 
 ## TODO
 
-- [ ] Make a NixOs configuration that works with [ship-nix.com](https://ship-nix/com) for easy deployment to DigitalOcean
+- [ ] Make a NixOs configuration that works with [ship-nix.com](https://ship-nix.com) for easy deployment to DigitalOcean
 - [ ] Use a bundler like Parcel or Vite to enable HMR (Hot Module Reloading)
 - [ ] Test use on Mac, non-NixOs and Windows
 
