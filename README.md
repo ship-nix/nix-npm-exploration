@@ -13,7 +13,12 @@ Exploration in combined development environment and deployment with node/npm wit
 
 # Get started
 
-For the most seamless developer experience, [have direnv installed in your system](https://direnv.net/) and [hook it to your shell]().
+## direnv
+
+For the most seamless developer experience, use direnv:
+
+1. [have direnv installed in your system](https://direnv.net/docs/installation.html)
+2. [hook it to your shell](https://direnv.net/docs/hook.html).
 
 ## Generate production code locally
 
@@ -45,7 +50,7 @@ The devShell will be automatically loded, and you don't need to run `nix-develop
 
 As soon as `package-lock.json` changes, your development shell will be automatically updated.
 
-Then you can run the watch script like you would in a traditional node environment:
+You can run the developmen script like you would in a traditional node environment:
 
 ```bash
 npm run watch
@@ -57,14 +62,13 @@ For node developers, it should be quite familiar to add and remove npm packages:
 
 ```bash
 npm install express
-```
-
-```bash
 npm remove express
 ```
 
-You might be surprised to discover that `node_modules` will not appear in your project directory at any time, even when installing and removing packages.
+You might be surprised to discover that `node_modules` will not appear in your project directory at any time, even when installing and removing npm packages.
 
-As soon as `package-lock.json` changes, your development shell will be automatically updated and point to an updated node_modules folder from your nix shell environment (if using direnv).
+[serokell/nix-npm-buildpackage](https://github.com/serokell/nix-npm-buildpackage) targets `package-lock.json` and fetches the packages via Nix.
+
+As soon as `package-lock.json` changes, your shell will be automatically updated so your node dependencies are available on the go.
 
 If the dev server is running, you might need to press `ctrl+C` to stop the server and start `npm run watch` up again for it to catch up.
