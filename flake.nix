@@ -48,7 +48,7 @@
                 shellHook = '' 
                       export NODE_ENV=development
                       export NODE_PATH=${node-modules}/node_modules
-                      export npm_config_cache=~/npm-cache
+                      export npm_config_cache=~/.npm
                       mkdir -p $out/bin
                       echo "Welcome to your nix development shell"
                       echo "Run 'npm run watch' to run dev server"
