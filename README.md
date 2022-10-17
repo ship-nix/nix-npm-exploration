@@ -54,13 +54,13 @@ If you want to see the generated code, run
 nix build
 ```
 
-If the build went well, you can inspect the production build in the `result` folder.
+If the build went well, you can inspect the output of a production build in the `result` folder.
 
 ## Load development environment
 
-### Only if direnv is not installed
+### Enter development shell manually
 
-Enter development shell:
+This should only be necessary if you are choosing to **not install** direnv:
 
 ```bash
 nix develop
@@ -70,11 +70,13 @@ You will need to exit and reload the shell each time you update your node depend
 
 ### With direnv
 
-direnv will automatically load the development environment, and you don't need to run `nix-develop` manually if you have it enabled.
+direnv will automatically load the development environment, and you don't need to run and rerun `nix-develop` manually. Updated shell with node dependencies will be automatically be added.
 
 ## Running `npm install` not needed.
 
 `flake.nix` will use [serokell/nix-npm-buildpackage](https://github.com/serokell/nix-npm-buildpackage) to read `package-lock.json` and pull npm libraries via Nix.
+
+This means don't need to use the actual `npm install` command. Packages will be automacially upated live in the shell.
 
 ## Run development Shell
 
@@ -86,10 +88,17 @@ npm run watch
 
 ## Installing and removing packages
 
-For node developers, this way of adding and removing npm packages should be familiar:
+For node developers, this way of adding and removing npm packages should be familiar.
+
+Install npm packages
 
 ```bash
 npm install express
+```
+
+remove npm packages
+
+```
 npm remove express
 ```
 
@@ -97,4 +106,4 @@ You might be surprised to discover that `node_modules` will **not** appear in th
 
 [serokell/nix-npm-buildpackage](https://github.com/serokell/nix-npm-buildpackage) targets `package-lock.json` and fetches the packages via Nix.
 
-If the dev server is running during `npm install/remove`, you might need to press `ctrl+C` to stop it and start `npm run watch` up again for changes to be reflected.
+If the dev server is running during `npm install/remove`, you might need to press `ctrl+C` to stop it and start `npm run watch` up again for direnv to update and changes to be reflected.
