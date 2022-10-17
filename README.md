@@ -1,4 +1,4 @@
-# A nix/npm exploration of node.js Nix flake for production and dev shell
+# A nix/npm exploration of node.js and nix flakes for production and dev shell
 
 **This is a work in progress, but already a great display for the power of a Node/Nix dev environment**
 
