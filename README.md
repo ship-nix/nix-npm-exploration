@@ -9,7 +9,7 @@ Exploration in combined development environment and deployment environment with 
 - [x] Super fast incrementally updating shell with a [Nix flake](https://nixos.wiki/wiki/Flakes) and efficient nix caching
 - [x] Auto-reloading nix dev shell with direnv
 - [x] Read package-lock.json, and build with nix, with no extra Nix code generation
-- [x] Manage dependencies with npm's native CLI, but actually fetch and build packages via Nix, both in development shell and production build
+- [x] Manage dependencies with npm's native CLI `npm install [package]`, but actually fetch and build packages via Nix, both in development shell and production build
 
 ## TODO
 
@@ -35,7 +35,7 @@ cd nix-npm-exploration
 
 The Nix flakes system is built into NixOs and one of the most exciting new features for the NixOs ecosystem.
 
-Flakes have become seemingly very reliable, but it is still considered a experimental feature of Nix, so you need to enable Nix flakes on your system.
+Flakes have become seemingly very reliable recently, but it is still officially considered a experimental feature of Nix. You therefore need to enable Nix flakes manually on your system.
 
 - [How to enable Nix flakes (nixos.wiki)](<(https://nixos.wiki/wiki/Flakes#Enable_flakes)>)
 
@@ -86,9 +86,11 @@ You can run the development script like you would in a regular node environment:
 npm run watch
 ```
 
+Inspect the live reloading js code that is generated in `dist/index.js`.
+
 ## Installing and removing packages
 
-For node developers, this way of adding and removing npm packages should be familiar.
+For node developers, the following way of adding and removing npm packages should be familiar.
 
 Install npm packages
 
