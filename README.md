@@ -18,7 +18,7 @@ Se output of production build in generated `result` folder.
 
 # Run development server
 
-## If you don`t have direnv
+## If you don`t use direnv
 
 First enter development shell:
 
@@ -26,9 +26,9 @@ First enter development shell:
 nix develop
 ```
 
-## If you use direnv
+## If you use direnv (recommended)
 
-Or, if you use `direnv` (recommended), the devShell will be automatically loded, and you don't need to run `nix-develop`!
+The devShell will be automatically loded, and you don't need to run `nix-develop`!
 
 ## Fully reproducible development environments across systems
 
