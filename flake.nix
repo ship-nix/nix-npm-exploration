@@ -18,7 +18,7 @@
             npmBuild = "npm run build";
             extraEnvVars = { NODE_ENV = "production"; };
           };
-          node-modules = buildPackage.mkNodeModules { src = ./.; pname = "npm"; version = "8"; };
+          nodeDependencies = buildPackage.mkNodeModules { src = ./.; pname = "npm"; version = "8"; };
         in
         {
           defaultPackage = pkgs.stdenv.mkDerivation
@@ -29,8 +29,8 @@
                 src = ./.;
                 installPhase = '' 
                       export NODE_ENV=production
-                      export NODE_PATH=${node-modules}/node_modules
-                      export npm_config_cache=${node-modules}/config-cache
+                      export NODE_PATH=${nodeDependencies}/node_modules
+                      export npm_config_cache=${nodeDependencies}/config-cache
                       mkdir -p $out
                       npm run build
                       cp -r ./dist/. $out
@@ -47,7 +47,7 @@
                 src = ./.;
                 shellHook = '' 
                       export NODE_ENV=development
-                      export NODE_PATH=${node-modules}/node_modules
+                      export NODE_PATH=${nodeDependencies}/node_modules
                       export npm_config_cache=~/.npm
                       mkdir -p $out/bin
                       echo "Welcome to your nix development shell"
