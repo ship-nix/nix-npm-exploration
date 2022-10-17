@@ -38,7 +38,7 @@ The Nix flakes system is built into NixOs and one of the most exciting new featu
 
 Flakes have become seemingly very reliable recently, but it is still officially considered a experimental feature of Nix. You therefore need to enable Nix flakes manually on your system.
 
-- [How to enable Nix flakes (nixos.wiki)](<(https://nixos.wiki/wiki/Flakes#Enable_flakes)>)
+- [How to enable Nix flakes (nixos.wiki)](https://nixos.wiki/wiki/Flakes#Enable_flakes)
 
 ## direnv (highly recommended)
 
