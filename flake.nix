@@ -41,7 +41,7 @@
           devShell = pkgs.mkShell
             (
               {
-                name = "nodeserver-ahell";
+                name = "nodeserver-shell";
                 buildPhase = "";
                 buildInputs = [ pkgs.esbuild pkgs.nodejs ];
                 src = ./.;
