@@ -13,7 +13,22 @@ Exploration in combined development environment and deployment with node/npm wit
 
 # Get started
 
-## direnv
+You need to have [Nix](https://nixos.org/download.html#download-nix) installed.
+
+You can try it for yourself by cloning this repository:
+
+```bash
+git clone https://github.com/ship-nix/nix-npm-exploration.git
+cd nix-npm-exploration
+```
+
+## Enable Nix flakes
+
+The flakes system is built into NixOs and one of the most exciting new features for the NixOs ecosystem. It's still considered experimental feature of Nix, so you need to enable Nix flakes on your system.
+
+- [How to enable Nix flakes (nixos.wiki)](<(https://nixos.wiki/wiki/Flakes#Enable_flakes)>)
+
+## direnv (highly recommended)
 
 For the most seamless developer experience, use direnv:
 
@@ -22,15 +37,17 @@ For the most seamless developer experience, use direnv:
 
 ## Generate production code locally
 
+If you want to see the generated code, run
+
 ```bash
 nix build
 ```
 
-Se output of production build in generated `result` folder.
+If the build went well, you can inspect the production build in the `result` folder.
 
-## Run development server
+## Load development environment
 
-### If no direnv installed
+### Only if direnv is not installed
 
 Enter development shell:
 
@@ -38,9 +55,11 @@ Enter development shell:
 nix develop
 ```
 
+You will need to exit and reload the shell each time you update your node dependencies.
+
 ### If you use direnv
 
-The devShell will be automatically loded, and you don't need to run `nix-develop` manually.
+direnv will automatically load the development environment, and you don't need to run `nix-develop` manually.
 
 ## Running `npm install` not needed.
 
