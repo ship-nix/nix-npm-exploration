@@ -1,28 +1,30 @@
-# A nix/npm exploration of node.js in production and development
+# A nix/npm exploration of node.js Nix flake for production and dev shell
+
+**This is a work in progress, but already a great display for the power of a Node/Nix dev environment**
 
 Exploration in combined development environment and deployment environment with node/npm with Nix flakes.
 
 ## What I have achieved in building so far
 
-- [x] Super fast auto-reloading development shell with a [Nix flake](https://nixos.wiki/wiki/Flakes)
-- [x] Automatically load auto-reloading nix development shell with direnv
-- [x] Manage dependencies with npm's CLI, but in reality actually fetch and build packages via Nix, both in development and production
+- [x] Super fast incrementally updating shell with a [Nix flake](https://nixos.wiki/wiki/Flakes) and efficient nix caching
+- [x] Auto-reloading nix dev shell with direnv
+- [x] Read package-lock.json, and build with nix, with no extra Nix code generation
+- [x] Manage dependencies with npm's native CLI, but actually fetch and build packages via Nix, both in development shell and production build
 
 ## TODO
 
 - [ ] Make a NixOs configuration that works with [ship-nix.com](https://ship-nix/com) for easy deployment to DigitalOcean
-- [ ] Use a bundler like Parcel or Vite to make HMR (Hot Module Reloading)
+- [ ] Use a bundler like Parcel or Vite to enable HMR (Hot Module Reloading)
 - [ ] Test use on Mac, non-NixOs and Windows
 
-**WORK IN PROGRESS**
+# Prerequisites
 
-[TOC]
+- You need to have [Nix](https://nixos.org/download.html#download-nix) installed
+- You need to enable Nix Flakes, [see below](#)
 
 # Get started
 
-You need to have [Nix](https://nixos.org/download.html#download-nix) installed.
-
-You can try it for yourself by cloning this repository:
+You can check out the dev environment for yourself by cloning this repository:
 
 ```bash
 git clone https://github.com/ship-nix/nix-npm-exploration.git
@@ -33,7 +35,7 @@ cd nix-npm-exploration
 
 The Nix flakes system is built into NixOs and one of the most exciting new features for the NixOs ecosystem.
 
-It's still considered experimental feature of Nix, so you need to enable Nix flakes on your system.
+Flakes have become seemingly very reliable, but it is still considered a experimental feature of Nix, so you need to enable Nix flakes on your system.
 
 - [How to enable Nix flakes (nixos.wiki)](<(https://nixos.wiki/wiki/Flakes#Enable_flakes)>)
 
